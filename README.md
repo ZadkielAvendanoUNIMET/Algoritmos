@@ -1,1 +1,1 @@
-Aqui se encuentran varios recursos creados por la asignatura de Algoritmos de la Universidad Metropolitana de Caracas.
+Aqui se encuentran varios recursos creados para la asignatura de Algoritmos de la Universidad Metropolitana de Caracas.
