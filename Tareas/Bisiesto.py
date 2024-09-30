@@ -10,10 +10,21 @@ Recuerde que // da el cociente de la división y % da el residuo
 Debe implementar dos versones del programa: una que use ciclos, y una que no los use.
 """
 
-# version de ciclos
+# VERSION DE CICLOS
 
-year = input("Ingresa un año: ")
-year = float(year)
+year = input("Ingresa un año entre 1900 y 2199: ")
+
+while True:
+    if year.isnumeric():
+        year = float(year)
+        if year <= 1900 or year >= 2199:
+            print("Debes ingresar un numero mayor a 1900 o menor a 2199. Por favor vuelve a intentarlo. /n")
+            year = input("Ingresa un año: ")
+        else:
+            break
+    else:
+        print("Debes ingresar un numero. Por favor vuelve a intentarlo. /n")
+        year = input("Ingresa un año: ")
 
 contador = 0
 
@@ -23,4 +34,4 @@ if year > 1900 and year < 2199:
         if i % 4 == 0 and (i % 100 != 0 or i % 400 == 0):
             contador += 1
 
-print(contador)
+print(f"Entre el año {year} y el año 2199 hay {contador} años bisiestos.")
