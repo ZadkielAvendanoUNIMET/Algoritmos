@@ -1,15 +1,18 @@
-# Nombre del movimiento, Tipo del movimiento (1: Ataque fisico, 2: Ataque especial, 3: Movimiento de estado)
+# Nombre del movimiento, Tipo del movimiento ( fisico, especial, estado)
     # Ataques fisicos y especiales: Tipo del ataque, Daño del ataque
-    # Movimientos de estado:  Tipo de estado, Atributo a cambiar, False/Disminuye o True/Sube, Operaciones a cambiar
+    # Movimientos de estado:  Tipo de estado, Atributo a cambiar, Operaciones a cambiar, False/Oponente o True/Usuario
 movimiento = {
     # Ataques Fisicos
-    "placaje": (1, "normal", 35),
+    "placaje": {"clase": "fisico", "tipo": "normal", "potencia": 40},
 
     # Ataques Especiales
-    "ascuas": (2, "fuego", 25),
-    "hidro pulso": (2, "agua", 25),
-    "hoja afilada": (2, "planta", 25),
+    "ascuas": {"clase": "especial", "tipo": "fuego", "potencia": 40},
+    "burbuja": {"clase": "especial", "tipo": "agua", "potencia": 40},
+    "latigo cepa": {"clase": "especial", "tipo": "planta", "potencia": 40},
+    "impactrueno": {"clase": "especial", "tipo": "electrico", "potencia": 25},
 
     # Movimientos de Estado
-    "malicioso": (3, "normal", "Def", 2/3)
+    "malicioso": {"clase": "estado", "tipo": "normal", "atributo": "Def", "efecto": 2/3, "usuario": False},
+    "gruñido": {"clase": "estado", "tipo": "normal", "atributo": "Atk", "efecto": 2/3, "usuario": False},
+    "refugio": {"clase": "estado", "tipo": "agua", "atributo": "Def", "efecto": 4/3, "usuario": True}
 }
