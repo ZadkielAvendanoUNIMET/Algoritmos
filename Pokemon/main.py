@@ -1,6 +1,7 @@
 import random
 import combate
 import criaturas
+import pokedex
 
 def mostrar_barra_progreso(vida, vida_maxima):
     longitud_barra = 20
@@ -34,11 +35,25 @@ if __name__ == "__main__":
             print("no tienes edad para ser entrenadora")
         quit()
 
+    numero = ""
+
+    while True:
+        print("\nQue quieres hacer?\n1 - Batalla Pokemon\n2 - Ver la Pokedex")
+        numero = input("Elige un numero: ")
+        if numero == "1":
+            print("\ntu starter es Pikachu")
+            break
+        elif numero == "2":
+            pokedex.llamar_pokedex()
+            continue
+        else:
+            print("\nElige una opcion valida")
+
     tipo = ""
 
     # Elige el pokemon y asigna el tipo y los movimientos a las variables correspondientes
     while True:
-        print("\nQue tipo de pokemon quieres para comenzar?\n1 - Fuego\n2 - Planta\n3 - Agua\n4 - Electrico")
+        print("\nQue tipo de pokemon quieres para comenzar?\n1 - Fuego\n2 - Planta\n3 - Agua\n4 - Electrico\n5 - Ver Pokedex")
         tipo = input("Elige un numero: ")
         if tipo == "3":
             print("\ntu starter es Oshawott")
@@ -56,6 +71,9 @@ if __name__ == "__main__":
             print("\ntu starter es Pikachu")
             jugador = criaturas.crear_pokemon("Pikachu")
             break
+        elif tipo == "5":
+            pokedex.llamar_pokedex()
+            continue
         else:
             print("\nNo tengo ese tipo")
 
